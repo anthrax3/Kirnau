@@ -162,10 +162,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Tailspin\Tailspin.Web.Survey.Shared\Tailspin.Web.Survey.Shared.csproj">
-      <Project>{A6CCDFCB-108E-4F74-8691-12434A04679C}</Project>
-      <Name>Tailspin.Web.Survey.Shared</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Samples.Web.ClaimsUtillities\Samples.Web.ClaimsUtillities.csproj">
       <Project>{3C9C7EE0-3FE1-4F7C-AD8C-F1044B16A8DB}</Project>
       <Name>Samples.Web.ClaimsUtillities</Name>
