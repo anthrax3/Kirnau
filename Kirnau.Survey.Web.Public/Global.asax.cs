@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Practices.Unity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,10 @@ namespace Kirnau.Survey.Web.Public
     {
         protected void Application_Start()
         {
+            var container = new UnityContainer();
+            ContainerBootstraper.RegisterTypes(container, false);
+            ControllerBuilder.Current.SetControllerFactory(new UnityControllerFactory(container));
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

@@ -11,13 +11,27 @@ namespace Kirnau.Survey.Web.Public
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            //routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            //);
+            routes.MapRoute(
+                "Home",
+                string.Empty,
+                new { controller = "Surveys", action = "Index" });
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                "ViewSurvey",
+                "survey/{tenant}/{surveySlug}",
+                new { controller = "Surveys", action = "Display" });
+
+            routes.MapRoute(
+                "ThankYouForFillingTheSurvey",
+                "survey/{tenant}/{surveySlug}/thankyou",
+                new { controller = "Surveys", action = "ThankYou" });
         }
     }
 }
