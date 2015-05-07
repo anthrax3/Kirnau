@@ -39,7 +39,7 @@ namespace Kirnau.Survey.Admin._sampleInitializationResources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Tailspin.Web._sampleInitializationResources.TenantInitLogo", typeof(TenantInitLogo).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Kirnau.Survey.Admin._sampleInitializationResources.TenantInitLogo", typeof(TenantInitLogo).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

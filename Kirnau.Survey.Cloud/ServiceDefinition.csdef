@@ -1,34 +1,66 @@
 <?xml version="1.0"?>
 <ServiceDefinition name="Kirnau.Survey.Cloud" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2014-06.2.4">
-    <WorkerRole name="Kirnau.Survey.Workers" vmsize="Small" />
-    <WebRole name="Kirnau.Survey.Web.Public" vmsize="Small">
-        <Sites>
-            <Site name="Web">
-                <Bindings>
-                    <Binding name="Endpoint1" endpointName="Endpoint1" />
-                </Bindings>
-            </Site>
-        </Sites>
-        <Endpoints>
-            <InputEndpoint name="Endpoint1" protocol="http" port="80" />
-        </Endpoints>
-    </WebRole>
-    <WebRole name="Kirnau.Survey.Admin" vmsize="Small">
-        <Sites>
-            <Site name="Web">
-                <Bindings>
-                    <Binding name="Endpoint1" endpointName="Endpoint1" />
-                </Bindings>
-            </Site>
-        </Sites>
-        <Endpoints>
-            <InputEndpoint name="Endpoint1" protocol="http" port="8080" />
-        </Endpoints>
-        <Startup priority="-2">
-            <Task commandLine="Microsoft.WindowsAzure.Caching\ClientPerfCountersInstaller.exe install" executionContext="elevated" taskType="simple" />
-        </Startup>
-        <ConfigurationSettings>
-            <Setting name="Microsoft.WindowsAzure.Plugins.Caching.ClientDiagnosticLevel" />
-        </ConfigurationSettings>
-    </WebRole>
+  <WorkerRole name="Kirnau.Survey.Workers" vmsize="Small">
+    <ConfigurationSettings>
+      <Setting name="DataConnectionString" />
+      <Setting name="TraceEventTypeFilter" />
+      <Setting name="EnableCaching" />
+      <Setting name="PremiumBatchProcessingSize" />
+      <Setting name="StandardBatchProcessingSize" />
+      <Setting name="SummaryUpdatePollingInterval" />
+      <Setting name="ExportRequestPollingInterval" />
+      <Setting name="MaxBatchIterationsPerCycle" />
+    </ConfigurationSettings>
+  </WorkerRole>
+  <WebRole name="Kirnau.Survey.Web.Public" vmsize="Small">
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="Endpoint1" endpointName="HttpIn" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <Endpoints>
+      <InputEndpoint name="HttpIn" protocol="http" port="80" />
+    </Endpoints>
+    <ConfigurationSettings>
+      <Setting name="DataConnectionString" />
+      <Setting name="TraceEventTypeFilter" />
+      <Setting name="EnableCaching" />
+    </ConfigurationSettings>
+  </WebRole>
+  <WebRole name="Kirnau.Survey.Admin" vmsize="Small">
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="Endpoint1" endpointName="HttpsIn" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <Endpoints>
+      <InputEndpoint name="HttpsIn" protocol="https" port="443" certificate="localhost" />
+    </Endpoints>
+    <Startup priority="-2">
+      <Task commandLine="Microsoft.WindowsAzure.Caching\ClientPerfCountersInstaller.exe install" executionContext="elevated" taskType="simple" />
+    </Startup>
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Caching.ClientDiagnosticLevel" />
+      <Setting name="DataConnectionString" />
+      <Setting name="PublicSurveyWebsiteUrl" />
+      <Setting name="TraceEventTypeFilter" />
+      <Setting name="EnableCaching" />
+      <!--<Setting name="Microsoft.WindowsAzure.Plugins.Caching.NamedCaches" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Caching.CacheSizePercentage" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Caching.ConfigStoreConnectionString" />-->
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="localhost" storeLocation="LocalMachine" storeName="My" />
+    </Certificates>
+    <Imports>
+      <Import moduleName="Caching" />
+    </Imports>
+    <LocalResources>
+      <LocalStorage name="DiagnosticStore" sizeInMB="20000" cleanOnRoleRecycle="false" />
+    </LocalResources>
+  </WebRole>
 </ServiceDefinition>

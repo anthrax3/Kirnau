@@ -97,8 +97,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.WindowsAzure.Caching.2.6.0.0\lib\net40-full\Microsoft.Web.DistributedCache.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Configuration">
-      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.3.1.0\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <Private>True</Private>
@@ -239,6 +240,11 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Survey\Controllers\SurveysController.cs" />
+    <Compile Include="Areas\Survey\Models\BrowseResponseModel.cs" />
+    <Compile Include="Areas\Survey\Models\ExportResponseModel.cs" />
+    <Compile Include="Areas\Survey\Models\SummaryExtensions.cs" />
+    <Compile Include="Areas\Survey\SurveyAreaRegistration.cs" />
     <Compile Include="ContainerBootstraper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClaimsAuthenticationController.cs" />
@@ -265,7 +271,11 @@
     <Compile Include="Utility\MvcHtmlExtensions.cs" />
     <Compile Include="Utility\StringExtensions.cs" />
     <Compile Include="WebRole.cs" />
-    <Compile Include="_sampleInitializationResources\TenantInitLogo.Designer.cs" />
+    <Compile Include="_sampleInitializationResources\TenantInitLogo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TenantInitLogo.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -296,8 +306,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <None Include="Resources\adatum-logo.png" />
+    <None Include="Resources\fabrikam-logo.png" />
     <Content Include="_sampleInitializationResources\adatum-logo.png" />
     <Content Include="_sampleInitializationResources\fabrikam-logo.png" />
+    <Content Include="Areas\Survey\Views\web.config" />
     <None Include="Microsoft.WindowsAzure.Caching\ClientPerfCountersInstaller.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -359,6 +372,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Survey\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -378,7 +392,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="_sampleInitializationResources\TenantInitLogo.resx" />
+    <EmbeddedResource Include="_sampleInitializationResources\TenantInitLogo.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TenantInitLogo.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
