@@ -1,14 +1,4 @@
-﻿//===============================================================================
-// Microsoft patterns & practices
-// Windows Azure Architecture Guide
-//===============================================================================
-// Copyright © Microsoft Corporation.  All rights reserved.
-// This code released under the terms of the 
-// Microsoft patterns & practices license (http://wag.codeplex.com/license)
-//===============================================================================
-
-
-namespace Tailspin.SimulatedIssuer.Controllers
+﻿namespace Kirnau.SimulatedIssuer.Controllers
 {
     using System;
     using System.Globalization;
@@ -19,10 +9,10 @@ namespace Tailspin.SimulatedIssuer.Controllers
     using Microsoft.IdentityModel.Web;
     using Microsoft.Security.Application;
     using Samples.Web.ClaimsUtillities;
-    using Tailspin.SimulatedIssuer.Security;
-    using Tailspin.SimulatedIssuer.ViewModels;
-    using Tailspin.Web.Survey.Shared.Models;
-    using Tailspin.Web.Survey.Shared.Stores;
+    using Kirnau.SimulatedIssuer.Security;
+    using Kirnau.SimulatedIssuer.ViewModels;
+    using Kirnau.Survey.Web.Shared.Models;
+    using Kirnau.Survey.Web.Shared.Stores;
 
     public class IssuerController : Controller
     {
@@ -65,19 +55,19 @@ namespace Tailspin.SimulatedIssuer.Controllers
             }
         }
 
-        public ActionResult TailspinSignIn(string signInRequest)
+        public ActionResult KirnauSignIn(string signInRequest)
         {
             // This simulates user authentication using Tailspin's registered members database
             var homeRealm = HttpUtility.ParseQueryString(signInRequest)["whr"];
-            var user = Tailspin.Users.Administrator;
-            var domain = Tailspin.Users.Domain;
-            if (!homeRealm.Equals(Tailspin.Federation.HomeRealm))
+            var user = Kirnau.Users.Administrator;
+            var domain = Kirnau.Users.Domain;
+            if (!homeRealm.Equals(Kirnau.Federation.HomeRealm))
             {
-                domain = homeRealm.Substring(Tailspin.Federation.HomeRealm.Length + 1).ToUpperInvariant();
+                domain = homeRealm.Substring(Kirnau.Federation.HomeRealm.Length + 1).ToUpperInvariant();
                 user = AllOrganizations.Users.Administrator;
             }
 
-            var model = new TailspinSignInViewModel()
+            var model = new KirnauSignInViewModel()
             {
                 Domain = domain,
                 UserName = user,
@@ -88,7 +78,7 @@ namespace Tailspin.SimulatedIssuer.Controllers
         }
         
         [HttpPost]
-        public ActionResult TailspinSignIn(TailspinSignInViewModel signInInfo)
+        public ActionResult TailspinSignIn(KirnauSignInViewModel signInInfo)
         {
             var ctx = System.Web.HttpContext.Current;
 
@@ -122,12 +112,12 @@ namespace Tailspin.SimulatedIssuer.Controllers
                 throw new ArgumentException("This issuer only acts as a Federation Provider. The whr parameter should be set to the identifier of the issuer you want to use.");
             }
 
-            if (homeRealm.Equals(Tailspin.Federation.HomeRealm))
+            if (homeRealm.Equals(Kirnau.Federation.HomeRealm))
             {
                 // The issuer will act as a STS for tailspin home realm users
                 return this.HandleTailspinSignInRequest();
             }
-            else if (homeRealm.StartsWith(Tailspin.Federation.HomeRealm))
+            else if (homeRealm.StartsWith(Kirnau.Federation.HomeRealm))
             {
                 // The issuer will act as a STS for tailspin home realm registered tenant's users
                 return this.HandleTailspinSignInRequest();

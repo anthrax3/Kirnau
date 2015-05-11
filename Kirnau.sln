@@ -38,12 +38,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fabrikam.SimulatedIssuer.V2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples.Web.ClaimsUtillities", "Dependecies\Samples.Web.ClaimsUtillities\Samples.Web.ClaimsUtillities.csproj", "{3C9C7EE0-3FE1-4F7C-AD8C-F1044B16A8DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tailspin.SimulatedIssuer", "Dependecies\Tailspin.SimulatedIssuer\Tailspin.SimulatedIssuer.csproj", "{BB00EFBA-1D37-4444-AFB9-A14CFCCFBB2B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kirnau.Survey.Web.Shared.Tests", "Tests\Kirnau.Survey.Web.Shared.Tests\Kirnau.Survey.Web.Shared.Tests.csproj", "{F880040A-E0D2-4EE8-8F25-9B2C8F7DC731}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EBBFB625-FF02-4BEF-A1CF-514851555D3F} = {EBBFB625-FF02-4BEF-A1CF-514851555D3F}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kirnau.SimulatedIssuer", "Dependecies\Kirnau.SimulatedIssuer\Kirnau.SimulatedIssuer.csproj", "{BB00EFBA-1D37-4444-AFB9-A14CFCCFBB2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,14 +99,14 @@ Global
 		{3C9C7EE0-3FE1-4F7C-AD8C-F1044B16A8DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C9C7EE0-3FE1-4F7C-AD8C-F1044B16A8DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C9C7EE0-3FE1-4F7C-AD8C-F1044B16A8DB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BB00EFBA-1D37-4444-AFB9-A14CFCCFBB2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BB00EFBA-1D37-4444-AFB9-A14CFCCFBB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BB00EFBA-1D37-4444-AFB9-A14CFCCFBB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BB00EFBA-1D37-4444-AFB9-A14CFCCFBB2B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F880040A-E0D2-4EE8-8F25-9B2C8F7DC731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F880040A-E0D2-4EE8-8F25-9B2C8F7DC731}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F880040A-E0D2-4EE8-8F25-9B2C8F7DC731}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F880040A-E0D2-4EE8-8F25-9B2C8F7DC731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB00EFBA-1D37-4444-AFB9-A14CFCCFBB2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB00EFBA-1D37-4444-AFB9-A14CFCCFBB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB00EFBA-1D37-4444-AFB9-A14CFCCFBB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB00EFBA-1D37-4444-AFB9-A14CFCCFBB2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,11 +119,11 @@ Global
 		{A25361B9-FDCC-445F-B620-1267BC6B0B2C} = {59B3199D-AF5E-47DA-B06A-FBAD9B1C148A}
 		{09FF60A7-887B-4FE5-B196-8A68B0E375DB} = {59B3199D-AF5E-47DA-B06A-FBAD9B1C148A}
 		{3C9C7EE0-3FE1-4F7C-AD8C-F1044B16A8DB} = {59B3199D-AF5E-47DA-B06A-FBAD9B1C148A}
-		{BB00EFBA-1D37-4444-AFB9-A14CFCCFBB2B} = {59B3199D-AF5E-47DA-B06A-FBAD9B1C148A}
 		{F880040A-E0D2-4EE8-8F25-9B2C8F7DC731} = {ED518EEA-0C40-4574-9312-C63BEFB548F6}
+		{BB00EFBA-1D37-4444-AFB9-A14CFCCFBB2B} = {59B3199D-AF5E-47DA-B06A-FBAD9B1C148A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPath = packages\TransientFaultHandling.Core.5.1.1209.0\lib\NET4;packages\EnterpriseLibrary.WindowsAzure.TransientFaultHandling.5.1.1212.0\lib\NET4;packages\EnterpriseLibrary.WindowsAzure.TransientFaultHandling.5.1.1212.0\DesignTime;packages\TransientFaultHandling.Core.5.1.1209.1\lib\NET4;packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\TransientFaultHandling.Core.5.1.1209.0\lib\NET4;packages\EnterpriseLibrary.WindowsAzure.TransientFaultHandling.5.1.1212.0\lib\NET4;packages\EnterpriseLibrary.WindowsAzure.TransientFaultHandling.5.1.1212.0\DesignTime;packages\TransientFaultHandling.Core.5.1.1209.1\lib\NET4;packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35
 	EndGlobalSection
 EndGlobal

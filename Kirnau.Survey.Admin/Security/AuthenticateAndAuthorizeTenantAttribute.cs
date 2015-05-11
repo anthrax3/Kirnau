@@ -39,8 +39,8 @@
             {
                 Context = AuthenticateAndAuthorizeRoleAttribute.GetReturnUrl(context.RequestContext, RequestAppendAttribute.RawUrl, null).ToString(),
                 HomeRealm = SubscriptionKind.Premium.Equals(tenant.SubscriptionKind)
-                    ? tenant.IssuerIdentifier ?? Tailspin.Federation.HomeRealm + "/" + (context.Controller as TenantController).Tenant.Name
-                    : Tailspin.Federation.HomeRealm + "/" + (context.Controller as TenantController).Tenant.Name,
+                    ? tenant.IssuerIdentifier ?? Kirnau.Federation.HomeRealm + "/" + (context.Controller as TenantController).Tenant.Name
+                    : Kirnau.Federation.HomeRealm + "/" + (context.Controller as TenantController).Tenant.Name,
                 Reply = replyUrl.ToString()
             };
 
@@ -50,7 +50,7 @@
         protected override void AuthorizeUser(AuthorizationContext context)
         {
             var tenantRequested = (string)context.RouteData.Values["tenant"];
-            var userTenant = ClaimHelper.GetCurrentUserClaim(Tailspin.ClaimTypes.Tenant).Value;
+            var userTenant = ClaimHelper.GetCurrentUserClaim(Kirnau.ClaimTypes.Tenant).Value;
             if (!tenantRequested.Equals(userTenant, StringComparison.OrdinalIgnoreCase))
             {
                 context.Result = new HttpUnauthorizedResult();

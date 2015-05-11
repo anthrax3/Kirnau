@@ -1,23 +1,13 @@
-﻿//===============================================================================
-// Microsoft patterns & practices
-// Windows Azure Architecture Guide
-//===============================================================================
-// Copyright © Microsoft Corporation.  All rights reserved.
-// This code released under the terms of the 
-// Microsoft patterns & practices license (http://wag.codeplex.com/license)
-//===============================================================================
-
-
-namespace Tailspin.SimulatedIssuer
+﻿namespace Kirnau.SimulatedIssuer
 {
     using System.Collections.Generic;
     using Microsoft.Practices.Unity;
-    using Tailspin.Web.Survey.Shared;
-    using Tailspin.Web.Survey.Shared.Helpers;
-    using Tailspin.Web.Survey.Shared.Models;
-    using Tailspin.Web.Survey.Shared.Stores;
-    using Tailspin.Web.Survey.Shared.Stores.Azure;
-    using Tailspin.Web.Survey.Shared.Stores.AzureStorage;
+    using Kirnau.Survey.Web.Shared;
+    using Kirnau.Survey.Web.Shared.Helpers;
+    using Kirnau.Survey.Web.Shared.Models;
+    using Kirnau.Survey.Web.Shared.Stores;
+    using Kirnau.Survey.Web.Shared.Stores.Azure;
+    using Kirnau.Survey.Web.Shared.Stores.AzureStorage;
 
     public static class ContainerBootstraper
     {

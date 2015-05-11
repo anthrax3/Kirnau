@@ -10,13 +10,13 @@
 
 namespace Samples.Web.ClaimsUtillities
 {
-    public static class Tailspin
+    public static class Kirnau
     {
         public static string TenantName
         {
             get
             {
-                return "Tailspin";
+                return "Kirnau";
             }
         }
 
@@ -38,9 +38,9 @@ namespace Samples.Web.ClaimsUtillities
 
         public static class Users
         {
-            public const string Domain = "TAILSPIN";
+            public const string Domain = "KIRNAU";
             public const string Administrator = "Administrator";
-            public const string FullName = "TAILSPIN\\Administrator";
+            public const string FullName = "KIRNAU\\Administrator";
         }
     }
 }

@@ -12,6 +12,7 @@
     <AssemblyName>Kirnau.Survey.Cloud</AssemblyName>
     <StartDevelopmentStorage>True</StartDevelopmentStorage>
     <Name>Kirnau.Survey.Cloud</Name>
+    <UseWebProjectPorts>True</UseWebProjectPorts>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,7 +44,7 @@
       <Private>True</Private>
       <RoleType>Web</RoleType>
       <RoleName>Kirnau.Survey.Admin</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+      <UpdateDiagnosticsConnectionStringOnPublish>False</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
     <ProjectReference Include="..\Kirnau.Survey.Web.Public\Kirnau.Survey.Web.Public.csproj">
       <Name>Kirnau.Survey.Web.Public</Name>
@@ -51,7 +52,7 @@
       <Private>True</Private>
       <RoleType>Web</RoleType>
       <RoleName>Kirnau.Survey.Web.Public</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+      <UpdateDiagnosticsConnectionStringOnPublish>False</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
     <ProjectReference Include="..\Kirnau.Survey.Workers\Kirnau.Survey.Workers.csproj">
       <Name>Kirnau.Survey.Workers</Name>
@@ -59,7 +60,7 @@
       <Private>True</Private>
       <RoleType>Worker</RoleType>
       <RoleName>Kirnau.Survey.Workers</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+      <UpdateDiagnosticsConnectionStringOnPublish>False</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

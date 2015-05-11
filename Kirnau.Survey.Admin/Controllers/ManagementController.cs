@@ -9,7 +9,7 @@
     using Kirnau.Survey.Web.Shared.Stores;
     
     [RequireHttps]
-    [AuthenticateAndAuthorizeKirnauAttribute(Roles = Tailspin.Roles.TenantAdministrator)]
+    [AuthenticateAndAuthorizeKirnauAttribute(Roles = Kirnau.Roles.TenantAdministrator)]
     public class ManagementController : Controller
     {
         private readonly ITenantStore tenantStore;

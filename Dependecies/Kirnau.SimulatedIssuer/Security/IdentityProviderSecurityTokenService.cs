@@ -1,14 +1,4 @@
-﻿//===============================================================================
-// Microsoft patterns & practices
-// Windows Azure Architecture Guide
-//===============================================================================
-// Copyright © Microsoft Corporation.  All rights reserved.
-// This code released under the terms of the 
-// Microsoft patterns & practices license (http://wag.codeplex.com/license)
-//===============================================================================
-
-
-namespace Tailspin.SimulatedIssuer.Security
+﻿namespace Kirnau.SimulatedIssuer.Security
 {
     using System;
     using System.Collections.Generic;
@@ -72,13 +62,13 @@ namespace Tailspin.SimulatedIssuer.Security
                 // as claims should be read from the authenticated Windows Principal.
                 // The following lines are hardcoded because windows integrated 
                 // authentication is disabled.
-                case Tailspin.Users.FullName:
+                case Kirnau.Users.FullName:
                     outputIdentity.Claims.AddRange(new List<Claim>
                        {
-                           new Claim(ClaimTypes.Name, Tailspin.Users.FullName), 
+                           new Claim(ClaimTypes.Name, Kirnau.Users.FullName), 
                            new Claim(ClaimTypes.GivenName, "Robert"),
                            new Claim(ClaimTypes.Surname, "Roe"),
-                           new Claim(ClaimTypes.Role, Tailspin.Roles.TenantAdministrator)
+                           new Claim(ClaimTypes.Role, Kirnau.Roles.TenantAdministrator)
                        });
                     break;
 
@@ -95,8 +85,8 @@ namespace Tailspin.SimulatedIssuer.Security
                            new Claim(ClaimTypes.Name, principal.Identity.Name), 
                            new Claim(ClaimTypes.GivenName, tenantName + " Jr."),
                            new Claim(ClaimTypes.Surname, "John"),
-                           new Claim(ClaimTypes.Role, Tailspin.Roles.SurveyAdministrator),
-                           new Claim(Tailspin.ClaimTypes.Tenant, tenantName)
+                           new Claim(ClaimTypes.Role, Kirnau.Roles.SurveyAdministrator),
+                           new Claim(Kirnau.ClaimTypes.Tenant, tenantName)
                        });
 
                     break;

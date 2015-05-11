@@ -1,20 +1,10 @@
-﻿//===============================================================================
-// Microsoft patterns & practices
-// Windows Azure Architecture Guide
-//===============================================================================
-// Copyright © Microsoft Corporation.  All rights reserved.
-// This code released under the terms of the 
-// Microsoft patterns & practices license (http://wag.codeplex.com/license)
-//===============================================================================
-
-
-namespace Tailspin.SimulatedIssuer
+﻿namespace Kirnau.SimulatedIssuer
 {
     using System.Diagnostics.CodeAnalysis;
     using System.Web.Mvc;
     using System.Web.Routing;
     using Microsoft.Practices.Unity;
-    using Tailspin.Web.Controllers;
+    using Kirnau.Web.Controllers;
 
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -26,8 +16,8 @@ namespace Tailspin.SimulatedIssuer
             routes.IgnoreRoute("*.htm");
 
             routes.MapRoute(
-                "TailspinSignIn",
-                "TailspinSignIn",
+                "KirnauSignIn",
+                "KirnauSignIn",
                 new { controller = "Issuer", action = "TailspinSignIn" });
 
             routes.MapRoute(

@@ -1,4 +1,4 @@
-﻿namespace Kirnau.Web.Admin.Utility
+﻿namespace Kirnau.Survey.Admin.Utility
 {
     using System;
     using System.Collections.Generic;

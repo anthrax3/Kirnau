@@ -14,7 +14,7 @@
     using Kirnau.Survey.Web.Shared.Stores.AzureStorage;
 
     [RequireHttps]
-    [AuthenticateAndAuthorizeTenant(Roles = Tailspin.Roles.SurveyAdministrator)]
+    [AuthenticateAndAuthorizeTenant(Roles = Kirnau.Roles.SurveyAdministrator)]
     public class AccountController : TenantController
     {
         private readonly IDictionary<string, Type> extendableTypes;

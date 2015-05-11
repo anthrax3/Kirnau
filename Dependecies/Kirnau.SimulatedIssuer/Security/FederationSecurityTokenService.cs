@@ -1,14 +1,4 @@
-﻿//===============================================================================
-// Microsoft patterns & practices
-// Windows Azure Architecture Guide
-//===============================================================================
-// Copyright © Microsoft Corporation.  All rights reserved.
-// This code released under the terms of the 
-// Microsoft patterns & practices license (http://wag.codeplex.com/license)
-//===============================================================================
-
-
-namespace Tailspin.SimulatedIssuer.Security
+﻿namespace Kirnau.SimulatedIssuer.Security
 {
     using System;
     using System.Collections.Generic;
@@ -23,7 +13,7 @@ namespace Tailspin.SimulatedIssuer.Security
     using Microsoft.IdentityModel.SecurityTokenService;
     using Microsoft.Practices.Unity;
     using Samples.Web.ClaimsUtillities;
-    using Tailspin.Web.Survey.Shared.Stores;
+    using Kirnau.Survey.Web.Shared.Stores;
 
     public class FederationSecurityTokenService : SecurityTokenService
     {
@@ -86,8 +76,8 @@ namespace Tailspin.SimulatedIssuer.Security
             var output = new ClaimsIdentity();
 
             CopyClaims(input, new[] { WSIdentityConstants.ClaimTypes.Name }, output);
-            TransformClaims(input, tenant.ClaimType, tenant.ClaimValue, ClaimTypes.Role, Tailspin.Roles.SurveyAdministrator, output);
-            output.Claims.Add(new Claim(Tailspin.ClaimTypes.Tenant, tenant.Name));
+            TransformClaims(input, tenant.ClaimType, tenant.ClaimValue, ClaimTypes.Role, Kirnau.Roles.SurveyAdministrator, output);
+            output.Claims.Add(new Claim(Kirnau.ClaimTypes.Tenant, tenant.Name));
 
             return output;
         }

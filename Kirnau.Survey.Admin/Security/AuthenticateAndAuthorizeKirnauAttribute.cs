@@ -15,7 +15,7 @@
             var signIn = new SignInRequestMessage(new Uri(fam.Issuer), fam.Realm)
             {
                 Context = AuthenticateAndAuthorizeRoleAttribute.GetReturnUrl(context.RequestContext, RequestAppendAttribute.RawUrl, null).ToString(),
-                HomeRealm = Tailspin.Federation.HomeRealm,
+                HomeRealm = Kirnau.Federation.HomeRealm,
                 Reply = replyUrl.ToString()
             };
 

@@ -1,21 +1,11 @@
-﻿//===============================================================================
-// Microsoft patterns & practices
-// Windows Azure Architecture Guide
-//===============================================================================
-// Copyright © Microsoft Corporation.  All rights reserved.
-// This code released under the terms of the 
-// Microsoft patterns & practices license (http://wag.codeplex.com/license)
-//===============================================================================
-
-
-namespace Tailspin.SimulatedIssuer.Security
+﻿namespace Kirnau.SimulatedIssuer.Security
 {
     using System.IdentityModel.Tokens;
     using Microsoft.IdentityModel.Tokens;
     using Microsoft.Practices.Unity;
-    using Tailspin.Web.Survey.Shared.Stores;
+    using Kirnau.Survey.Web.Shared.Stores;
 
-    public class TenantStoreBasedIssuerNameRegistry : IssuerNameRegistry
+    public class TenantStoreBasedIssuerNameRegistry : Microsoft.IdentityModel.Tokens.IssuerNameRegistry
     {
         private readonly ITenantStore tenantStore;
 
