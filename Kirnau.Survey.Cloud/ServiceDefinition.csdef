@@ -38,7 +38,7 @@
       </Site>
     </Sites>
     <Endpoints>
-      <InputEndpoint name="HttpsIn" protocol="https" port="443" certificate="localhost" />
+      <InputEndpoint name="HttpsIn" protocol="https" port="449" certificate="localhost" />
     </Endpoints>
     <Startup priority="-2">
       <Task commandLine="Microsoft.WindowsAzure.Caching\ClientPerfCountersInstaller.exe install" executionContext="elevated" taskType="simple" />

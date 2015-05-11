@@ -393,10 +393,6 @@
       <Project>{3c9c7ee0-3fe1-4f7c-ad8c-f1044b16a8db}</Project>
       <Name>Samples.Web.ClaimsUtillities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Kirnau.Survey.Web.Public\Kirnau.Survey.Web.Public.csproj">
-      <Project>{979e8c27-dad9-4237-8c9f-0d64f3a0c400}</Project>
-      <Name>Kirnau.Survey.Web.Public</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Kirnau.Survey.Web.Shared\Kirnau.Survey.Web.Shared.csproj">
       <Project>{ebbfb625-ff02-4bef-a1cf-514851555d3f}</Project>
       <Name>Kirnau.Survey.Web.Shared</Name>
